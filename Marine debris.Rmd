@@ -1,0 +1,28 @@
+---
+title: "Assessement 1"
+output: html_document
+date: "2024-05-21"
+---
+
+```{r}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, error = FALSE, warning = FALSE)
+```
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+library(readr)
+```
+
+```{r}
+dataset <- read.csv("plastic_debris.csv")
+View(dataset)
+```
+
+```{r}
+ggplot(data = dataset , aes(x = Litter, y = Percentage)) + 
+  geom_bar(stat = "identity", width = 0.5) +
+  theme(axis.text.x = element_text(angle = 90))
+labs(x = "Marine Litter Debris", y = "Percentage")
+```
+
